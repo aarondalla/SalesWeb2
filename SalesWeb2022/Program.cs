@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SalesWeb2022.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SalesWeb2022Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesWeb2022Context") ?? throw new InvalidOperationException("Connection string 'SalesWeb2022Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
