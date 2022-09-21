@@ -15,5 +15,7 @@ namespace SalesWeb2022.Data
         }
 
         public DbSet<SalesWeb2022.Models.Department> Department { get; set; } = default!;
+        public DbSet<SalesWeb2022.Models.Seller> Seller { get; set; }
+        public DbSet<SalesWeb2022.Models.SalesRecord> SalesRecord { get; set; }
     }
 }
